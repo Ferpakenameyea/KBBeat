@@ -1,0 +1,64 @@
+ManifestFileVersion: 0
+CRC: 1438079973
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4cba0b4f208601c3db629b1394856191
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a3d76271b67ebc685bb542d970c74127
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 4cba0b4f208601c3db629b1394856191
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0004c4bcdd06ca14ca6f3710efb50992, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetBundles/level0/meta.json
+- Assets/AssetBundles/level0/Textures/NoteMaterial.mat
+- Assets/AssetBundles/level0/ingame/ReflectionProbe-0.exr
+- Assets/AssetBundles/level0/preview.ogg
+- Assets/AssetBundles/level0/art.png
+- Assets/AssetBundles/level0/mus.ogg
+- Assets/AssetBundles/level0/Textures/KeyBoard.png
+- Assets/AssetBundles/level0/Prefab/Track.prefab
+- Assets/AssetBundles/level0/inPlaying.json
+Dependencies: []
