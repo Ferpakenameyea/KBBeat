@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; } = null;
+
+    [SerializeField] private GameObject audioPlayerPrefab;
 
     [SerializeField] private float musicVolume;
 
@@ -45,9 +49,7 @@ public class SoundManager : MonoBehaviour
             this.effectVolume = value;
         }
     }
-
-    [SerializeField] private GameObject playerPoolPrefab;
-    private ObjectPool playerPool;
+    private ObjectPool<AudioPlayer> playerPool;
     private List<AudioPlayer> activeEffectPlayers = new();
     private List<AudioPlayer> activeMusicPlayers = new();
     private Queue<AudioPlayer> toRemove = new();
@@ -59,7 +61,26 @@ public class SoundManager : MonoBehaviour
             Instance = this;
             this.transform.SetParent(null);
             DontDestroyOnLoad(gameObject);
-            this.playerPool = Instantiate(playerPoolPrefab, this.transform).GetComponent<ObjectPool>();
+            this.playerPool = new(
+                () => {
+                    var o = Instantiate(audioPlayerPrefab);
+                    o.transform.SetParent(this.transform);
+                    o.SetActive(false);
+                    return o.GetComponent<AudioPlayer>();
+                },
+                (o) => o.gameObject.SetActive(true),
+                (o) => {
+                    o.gameObject.SetActive(false);
+                    o.transform.SetParent(this.transform);
+                },
+                (o) => {
+                    if (!o.IsDestroyed())
+                    {
+                        Destroy(o.gameObject);
+                    }
+                },
+                defaultCapacity: 20
+            );
             this.OnEffectVolumeChange += (oldVol, newVol) =>
             {
                 ChangeAllVolumesInList(activeEffectPlayers, newVol);
@@ -102,7 +123,7 @@ public class SoundManager : MonoBehaviour
         {
             var removing = toRemove.Dequeue();
             list.Remove(removing);
-            playerPool.Release(removing.gameObject);
+            playerPool.Release(removing);
         }
 
         yield return null;
@@ -123,7 +144,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioPlayer PlayClip(AudioClip clip, float volume, Channel channel, float pitch = 1.0f, bool repeat = false)
     {
-        var player = playerPool.Get(true).GetComponent<AudioPlayer>();
+        var player = playerPool.Get().GetComponent<AudioPlayer>();
         player.transform.SetParent(this.transform);
         player.Repeat = repeat;
         player.Pitch = pitch;

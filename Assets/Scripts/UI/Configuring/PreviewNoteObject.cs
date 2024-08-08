@@ -1,11 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityEngine.Rendering;
 using static InPlayingEnvironment;
 
 public class PreviewNoteObject : MonoBehaviour
 {
-    private ObjectPool pool;
+    // auto injected
+    private ObjectPool<PreviewNoteObject> pool;
+    
     private Note note;
     private float cycleStartTime;
     private float generateTime;
@@ -17,7 +20,7 @@ public class PreviewNoteObject : MonoBehaviour
     {
         if (pool == null)
         {
-            ObjectPool.TryGetPool("PreviewNotePool", out this.pool);
+            throw new UnityException("note pool not injected by GamingPreview");
         }
     }
     internal void Launch(Note note, float cycleStartTime, Vector3 appear, Track track)
@@ -45,7 +48,7 @@ public class PreviewNoteObject : MonoBehaviour
 
         if (timeToDeath <= 0)
         {
-            this.pool.Release(this.gameObject);
+            this.pool.Release(this);
             this.track.Spark();
             Debug.Log($"Preview strike at {note.StrikeTime + offset}, passed {Time.time - cycleStartTime}");
             Debug.Log($"Survive time: {Time.time - this.generateTime}, death at {this.appear + this.speed * (Time.time - this.generateTime)}");

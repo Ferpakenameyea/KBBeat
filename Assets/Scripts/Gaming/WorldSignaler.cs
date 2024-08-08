@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WorldSignaler : MonoBehaviour
 {
-    public void Signal()
+    public void SignalFadeInAnimationComplete()
     {
         LevelPlayer.Instance.Signal();
     }

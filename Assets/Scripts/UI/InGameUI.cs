@@ -62,7 +62,7 @@ public class InGameUI : MonoBehaviour
         ScoreCounter.OnWeak -= WeakWarn;    
     }
 
-    public void Signal()
+    public void SignalFadeInAnimationComplete()
     {
         LevelPlayer.Instance.Signal();
         Debug.Log("Signaled playing");

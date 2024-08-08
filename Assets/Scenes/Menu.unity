@@ -1728,6 +1728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c4a1a30cadc4040ab70d5272ccdcfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPlayerPrefab: {fileID: 4899929530513936318, guid: 06d2ae283ad6a71428997b8dd9b6eb22, type: 3}
   musicVolume: 1
   effectVolume: 1
   soundTable:
@@ -1739,7 +1740,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ae670bd3a0172454883d947a071f97e0, type: 3}
   - {fileID: 8300000, guid: 7f026e0b683e6f24086b8ef0d384fa53, type: 3}
   - {fileID: 8300000, guid: 22971116a10389245820a8d7c6969b63, type: 3}
-  playerPoolPrefab: {fileID: 8127670782725581917, guid: 36a5f96186a4f2149be969e2f7fc6aec, type: 3}
 --- !u!1 &918751366
 GameObject:
   m_ObjectHideFlags: 0

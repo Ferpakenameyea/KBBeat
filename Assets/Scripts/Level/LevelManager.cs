@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour
 
         var newtonsoftJsonSettings = new JsonSerializerSettings();
         newtonsoftJsonSettings.Converters.Add(new InPlayingEnvironment.Note.NoteJsonConverter());
-
+    
         List<BunchAssetLoadingTask.LoadAction> tasks = new() {
             new("inPlaying.json", (res) =>
                 inPlaying = JsonConvert.DeserializeObject<InPlayingEnvironment>(
@@ -169,7 +169,7 @@ public class Meta
     [SerializeField] private int rightTrackSize;
     [SerializeField] private Vector3 noteAppearPosition;
     [SerializeField] private float bpm;
-    [DoNotSerialize] public Texture art;
+    public Texture art;
 
     public string AssetBundleName { get => assetBundleName; }
     public string Name { get => name; }
@@ -299,13 +299,13 @@ public class InPlayingEnvironment
     [JsonProperty("rightNotes")]
     public Note[] RightNotes { get; set; }
 
-    [DoNotSerialize] public GameObject WorldPrefab { get; set; }
-    [DoNotSerialize] public GameObject HitNotePrefab { get; set; }
-    [DoNotSerialize] public GameObject HoldNotePrefab { get; set; }
-    [DoNotSerialize] public GameObject FramePrefab { get; set; }
-    [DoNotSerialize] public GameObject HitEffectPrefab { get; set; }
-    [DoNotSerialize] public AudioClip MusicClip { get; set; }
-    [DoNotSerialize] public AssetBundle SceneAssetBundle { get; set; }
+    public GameObject WorldPrefab { get; set; }
+    public GameObject HitNotePrefab { get; set; }
+    public GameObject HoldNotePrefab { get; set; }
+    public GameObject FramePrefab { get; set; }
+    public GameObject HitEffectPrefab { get; set; }
+    public AudioClip MusicClip { get; set; }
+    public AssetBundle SceneAssetBundle { get; set; }
     
     public void SwitchTo()
     {

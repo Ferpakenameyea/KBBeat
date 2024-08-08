@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Pool;
 using static InPlayingEnvironment;
 
 public class GamingPreview : MonoBehaviour
 {
-    [SerializeField] private ObjectPool notePool;
+    [SerializeField] private GameObject previewNoteObjectPrefab;
     [SerializeField] private AudioClip clip;
     [SerializeField] private TextAsset noteSheet;
     [SerializeField] private Vector3 appear;
     [SerializeField] private Track track;
 
+    private ObjectPool<PreviewNoteObject> notePool;
     private AudioPlayer player;
     private List<Note> notes;
     
@@ -37,6 +40,21 @@ public class GamingPreview : MonoBehaviour
 
     private void Start()
     {
+        var field = typeof(PreviewNoteObject).GetField("pool", BindingFlags.Instance | BindingFlags.NonPublic);
+
+        this.notePool = new(
+            () => {
+                var pre = Instantiate(this.previewNoteObjectPrefab).GetComponent<PreviewNoteObject>();
+                field.SetValue(pre, this.notePool);
+                return pre;
+            },
+            o => o.gameObject.SetActive(true),
+            o => o.gameObject.SetActive(false),
+            o => Destroy(o.gameObject),
+            defaultCapacity: 5,
+            maxSize: 20
+        );
+
         var settings = new JsonSerializerSettings();
         settings.Converters.Add(new Note.NoteJsonConverter());
 
@@ -55,7 +73,7 @@ public class GamingPreview : MonoBehaviour
                 if (passed > notes.Peek().StrikeTime - BuiltInSettings.MoveTime + this.Offset)
                 {
                     var note = notes.Dequeue();
-                    this.notePool.Get(true).GetComponent<PreviewNoteObject>()
+                    this.notePool.Get().GetComponent<PreviewNoteObject>()
                         .Launch(note, startTime, this.appear, this.track);
                     launched++;
                     notes.Enqueue(note);
@@ -67,5 +85,10 @@ public class GamingPreview : MonoBehaviour
             yield break;
         }
         StartCoroutine(PreviewCoroutine());
+    }
+
+    private void OnDestroy() 
+    {
+        this.notePool?.Dispose();        
     }
 }
