@@ -1,4 +1,4 @@
-using KBbeat;
+using KBBeat;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using UnityEngine.Playables;
 using UnityEngine.Pool;
 using UnityEngine.SceneManagement;
 
-namespace KBbeat
+namespace KBBeat
 {
     public class LevelPlayer : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-using KBbeat;
+using KBBeat;
 
 public class HitNoteObject : NoteObject
 {

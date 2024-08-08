@@ -1,5 +1,5 @@
-﻿using KBbeat;
-using KBbeat.Debugger;
+﻿using KBBeat;
+using KBBeat.Debugger;
 using System;
 using System.Collections.Generic;
 using System.IO;

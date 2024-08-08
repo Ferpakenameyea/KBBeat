@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-namespace KBbeat
+namespace KBBeat
 {
     public class LevelSelector : MonoBehaviour
     {

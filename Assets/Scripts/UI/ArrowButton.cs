@@ -1,4 +1,4 @@
-using KBbeat;
+using KBBeat;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace KBbeat.Debugger
+namespace KBBeat.Debugger
 {
     public class Tester : MonoBehaviour
     {

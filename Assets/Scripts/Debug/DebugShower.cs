@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace KBbeat.Debugger
+namespace KBBeat.Debugger
 {
     public class DebugShower : MonoBehaviour
     {

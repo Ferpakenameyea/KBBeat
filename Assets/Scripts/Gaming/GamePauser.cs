@@ -1,4 +1,4 @@
-using KBbeat;
+using KBBeat;
 using System.Collections;
 using TMPro;
 using UnityEngine;

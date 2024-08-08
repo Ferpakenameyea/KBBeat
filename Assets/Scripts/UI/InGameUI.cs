@@ -1,4 +1,4 @@
-using KBbeat;
+using KBBeat;
 using TMPro;
 using UnityEngine;
 

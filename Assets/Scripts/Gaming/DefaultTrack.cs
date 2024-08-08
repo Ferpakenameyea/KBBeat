@@ -1,4 +1,4 @@
-﻿using KBbeat;
+﻿using KBBeat;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]

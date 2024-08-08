@@ -1,5 +1,5 @@
 using System;
-using KBbeat;
+using KBBeat;
 using UnityEngine;
 using UnityEngine.Pool;
 

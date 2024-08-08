@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Diagnostics;
-using KBbeat;
+using KBBeat;
 using Unity.VisualScripting;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
