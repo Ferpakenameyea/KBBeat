@@ -7,16 +7,6 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(Tester))]
-public class TesterInspector : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        var tester = target as Tester;
-    }
-}
-
 public class EditorTools : Editor
 {
     [MenuItem("Tools/GenerateAssetBundleForWindows")]
@@ -84,46 +74,6 @@ public class EditorTools : Editor
     }
 }
 
-[CustomEditor(typeof(LevelSelector))]
-public class SelectorEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        var component = target as LevelSelector;
-        if (GUILayout.Button("SwitchLeft"))
-        {
-            component.SwitchLeft();
-        }
-        if (GUILayout.Button("SwitchRight"))
-        {
-            component.SwitchRight();
-        }
-    }
-}
-
-[CustomEditor(typeof(GameEndUITester))]
-public class GameEndUITesterEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        var component = target as GameEndUITester;
-        if (GUILayout.Button("TestShow"))
-        {
-            component.TestShowRank();
-        }
-        if (GUILayout.Button("TestAcc"))
-        {
-            component.TestShowAcc();
-        }
-        if (GUILayout.Button("TestScore"))
-        {
-            component.TestShowScore();
-        }
-    }
-}
-
 public class SmoothNormalTool
 {
     [MenuItem("Tools/平滑法线、写入切线数据")]
@@ -160,28 +110,5 @@ public class SmoothNormalTool
             tangents[j] = new Vector4(averageNormals[j].x, averageNormals[j].y, averageNormals[j].z, 0);
         }
         mesh.tangents = tangents;
-    }
-}
-
-[CustomEditor(typeof(InGameUI))]
-public class InGameUIEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-
-        if (GUILayout.Button("TestLate"))
-        {
-            typeof(InGameUI).GetMethod("LateWarn", 
-                System.Reflection.BindingFlags.NonPublic | 
-                System.Reflection.BindingFlags.Instance)?.Invoke(target, Array.Empty<object>());            
-        }
-
-        if (GUILayout.Button("TestHeavy"))
-        {
-            typeof(InGameUI).GetMethod("HeavyWarn",
-                System.Reflection.BindingFlags.NonPublic |
-                System.Reflection.BindingFlags.Instance)?.Invoke(target, Array.Empty<object>());
-        }
     }
 }

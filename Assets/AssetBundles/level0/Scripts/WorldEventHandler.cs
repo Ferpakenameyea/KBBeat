@@ -1,4 +1,6 @@
 using KBBeat;
+using KBBeat.Core;
+using KBBeat.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

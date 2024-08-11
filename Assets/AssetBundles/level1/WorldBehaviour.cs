@@ -1,4 +1,6 @@
 using KBBeat;
+using KBBeat.Core;
+using KBBeat.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;

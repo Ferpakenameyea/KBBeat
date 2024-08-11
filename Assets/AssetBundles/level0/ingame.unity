@@ -65498,13 +65498,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c4a1a30cadc4040ab70d5272ccdcfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPlayerPrefab: {fileID: 4899929530513936318, guid: 06d2ae283ad6a71428997b8dd9b6eb22, type: 3}
   musicVolume: 1
   effectVolume: 1
   soundTable:
   - {fileID: 8300000, guid: afb1352c135c15448828aab044a55760, type: 3}
   - {fileID: 8300000, guid: b3f76a2f799ddff46be24d9633eddd37, type: 3}
   - {fileID: 8300000, guid: 518c0f3a61add5a4cbf2316e05ab02de, type: 3}
-  playerPoolPrefab: {fileID: 8127670782725581917, guid: 36a5f96186a4f2149be969e2f7fc6aec, type: 3}
 --- !u!1 &2123131596
 GameObject:
   m_ObjectHideFlags: 0
