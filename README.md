@@ -1,6 +1,8 @@
 # KBBeat
 KBBeat(KeyBoard Beat) Official by MCDaxia
 
+Unity Editor version 2022.3.17f1c1
+
 KBBeat is a rhythm game developed by MCDaxia1472 that is totally free,
 any commercial use of the compiled game itself or artist assets is not allowed.
 
