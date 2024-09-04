@@ -1008,6 +1008,59 @@ CircleCollider2D:
   m_Offset: {x: -10.189029, y: 1.4607967}
   serializedVersion: 2
   m_Radius: 249.05449
+--- !u!1 &541831511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 541831512}
+  - component: {fileID: 541831514}
+  m_Layer: 0
+  m_Name: LuaCoroutineServer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &541831512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541831511}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1536655050}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &541831514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541831511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d3f5e2758b3324c8a42cf361440884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luaScriptAsset: {fileID: 4900000, guid: 9dcb94ef94d5b9d4780829b71cc43881, type: 3}
+  ints: []
+  floats: []
+  doubles: []
+  bools: []
+  strings: []
+  vectors: []
+  colors: []
+  objects: []
 --- !u!1 &661713821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,6 +2546,7 @@ Transform:
   - {fileID: 492345001}
   - {fileID: 1949175322}
   - {fileID: 1398674651}
+  - {fileID: 541831512}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1654378713

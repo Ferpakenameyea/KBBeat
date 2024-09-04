@@ -5,11 +5,8 @@ using UnityEngine;
 
 namespace KBBeat.InGame
 {
-    [RequireComponent(typeof(Animator))]
     public class InGameUI : MonoBehaviour
     {
-        private Animator animator;
-
         [SerializeField] private TextMeshProUGUI combo;
         [SerializeField] private TextMeshProUGUI scoreShower;
         [SerializeField] private Color allCuteComboColor = Color.yellow;
@@ -25,7 +22,6 @@ namespace KBBeat.InGame
 
         private void Start()
         {
-            this.animator = GetComponent<Animator>();
             ScoreCounter.Counter.OnScoresChanged += (score, _) =>
             {
                 scoreShower.text =

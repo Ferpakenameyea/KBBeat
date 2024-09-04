@@ -6,6 +6,7 @@ namespace KBBeat.Audio
     public class AudioPlayer : MonoBehaviour
     {
         private AudioSource audioSource;
+        
         private bool paused = false;
         public bool Stopped { get => !audioSource.isPlaying && !this.paused; }
         public bool Paused { get => this.paused; }

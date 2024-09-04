@@ -109,7 +109,8 @@ namespace KBBeat
                                 .FromJson<Meta>(),
                             icon == null ? this.defaultLevelIcon : icon,
                             levelBundle
-                                .LoadAsset<AudioClip>("preview.ogg")
+                                .LoadAsset<AudioClip>("preview.ogg"),
+                            isBuiltIn: true
                         ));
                     success++;
                 }
@@ -123,9 +124,58 @@ namespace KBBeat
                     levelBundle.Unload(false);
                 }
             }
-            Debug.Log($"Loaded levels. Success: {success}, fail: {fail}, total: {success + fail}");
+            Debug.Log($"Loaded built levels. Success: {success}, fail: {fail}, total: {success + fail}");
+
+            yield return LoadCustomLevels();
+
             this.OnLoadComplete?.Invoke();
         }
+
+        private IEnumerator LoadCustomLevels() 
+        {
+            DirectoryInfo directory = new("./custom");
+            if (!directory.Exists)
+            {
+                directory.Create();
+                yield break;
+            }
+            int success = 0, fail = 0;
+            foreach (var dir in directory.GetDirectories()) 
+            {
+                string levelName = dir.Name;
+                string assetsPath = $"./custom/{levelName}/custom.{levelName}";
+                yield return new ABLoader(assetsPath).LoadAsync((bundle) => {
+                    try
+                    {
+                        var icon = bundle.LoadAsset<Texture>("art.png");
+                        this.levels.Add(new(
+                                bundle
+                                    .LoadAsset<TextAsset>("meta.json")
+                                    .FromJson<Meta>(),
+                                icon == null ? this.defaultLevelIcon : icon,
+                                bundle
+                                    .LoadAsset<AudioClip>("preview.ogg"),
+                                isBuiltIn: false
+                            ));
+                        success++;
+                    }   
+                    catch (System.Exception e)
+                    {
+                        Debug.LogErrorFormat("Error when loading level with name {0}", levelName);
+                        fail++;
+                        Debug.LogException(e);
+                    }
+                    finally
+                    {
+                        bundle.Unload(false);
+                    }
+                });
+            }
+
+            Debug.LogFormat("[Custom levels] success: {0}, fail: {1}, total: {2}", success, fail, success + fail);
+            yield break;
+        }
+
         public void SwitchLeft()
         {
             if (this.Switching || !this.Ready)
@@ -219,7 +269,10 @@ namespace KBBeat
             }
 
             LevelManager.Instance.OnLoadLevelSuccess += (_) => ready = true;
-            LevelManager.Instance.LoadLevelAsync(this.SelectedLevelName, Encoding.UTF8);
+            LevelManager.Instance.LoadLevelAsync(
+                this.SelectedLevelName, 
+                Encoding.UTF8, 
+                this.levels[this.SelectedLevelIndex].IsBuiltIn);
             yield return new WaitUntil(() => ready);
             Debug.Log("SetComplete");
             UIAnimator.SetTrigger("LoadComplete");
@@ -244,12 +297,14 @@ namespace KBBeat
             public Meta Meta { get; }
             public Texture Art { get; }
             public AudioClip Preview { get; }
+            public bool IsBuiltIn { get; }
 
-            public LevelShowerInfo(Meta meta, Texture art, AudioClip preview)
+            public LevelShowerInfo(Meta meta, Texture art, AudioClip preview, bool isBuiltIn = true)
             {
                 this.Meta = meta;
                 this.Art = art;
                 this.Preview = preview;
+                this.IsBuiltIn = isBuiltIn;
             }
         }
     }

@@ -60,14 +60,19 @@ namespace KBBeat.Core
             }
         }
 
-        public void LoadLevelAsync(string levelName, Encoding encoding)
+        public void LoadLevelAsync(string levelName, Encoding encoding, bool builtIn)
         {
             this.TryUnload();
-            StartCoroutine(LoadLevelCoroutine(levelName, encoding));
+            StartCoroutine(LoadLevelCoroutine(levelName, encoding, builtIn));
         }
 
-        private IEnumerator LoadLevelCoroutine(string levelName, Encoding encoding)
+        private IEnumerator LoadLevelCoroutine(string levelName, Encoding encoding, bool builtIn)
         {
+            string assetsURL = builtIn ? 
+                Path.Combine(Application.streamingAssetsPath, $"levels.{levelName}") : 
+                $"./custom/{levelName}/custom.{levelName}";
+            string sceneURL = assetsURL + "scene";
+
             this.OnLoadLevelStart?.Invoke(levelName);
             this.Unload();
             InPlayingEnvironment inPlaying = null;
@@ -118,10 +123,10 @@ namespace KBBeat.Core
             {
                 case RuntimePlatform.WindowsEditor:
                 case RuntimePlatform.WindowsPlayer:
-                    assetTask = new BunchAssetWindowsLoadingTask($"levels.{levelName}", tasks);
+                    assetTask = new BunchAssetWindowsLoadingTask(assetsURL, tasks);
                     break;
                 case RuntimePlatform.Android:
-                    assetTask = new BunchAssetAndroidLoadingTask($"levels.{levelName}", tasks);
+                    assetTask = new BunchAssetAndroidLoadingTask(assetsURL, tasks);
                     break;
                 default:
                     throw new UnityException($"Platform not supported: {platform}");
@@ -134,8 +139,10 @@ namespace KBBeat.Core
                 this.OnLoadLevelFail?.Invoke(levelName);
                 yield break;
             }
-            var sceneBundle = AssetBundle.LoadFromFileAsync(Path.Combine(Application.streamingAssetsPath, $"levels.{levelName}scene"));
+
+            var sceneBundle = AssetBundle.LoadFromFileAsync(sceneURL);
             yield return sceneBundle;
+
             this.OnLoadLevelProgressChange?.Invoke(1f);
             inPlaying.SceneAssetBundle = sceneBundle.assetBundle;
             this.LoadedLevel = new(meta, inPlaying);
@@ -343,13 +350,13 @@ namespace KBBeat.Core
 
     internal abstract class BunchAssetLoadingTask
     {
-        protected string parentBundle;
+        protected string url;
         protected List<LoadAction> tasks = new();
         public bool Failed { get; protected set; } = false;
         protected string failureCause;
         public BunchAssetLoadingTask(string parentBundle, List<LoadAction> tasks)
         {
-            this.parentBundle = parentBundle;
+            this.url = parentBundle;
             this.tasks = tasks;
         }
 
@@ -377,13 +384,11 @@ namespace KBBeat.Core
 
     internal class BunchAssetWindowsLoadingTask : BunchAssetLoadingTask
     {
-        public BunchAssetWindowsLoadingTask(string parentBundle, List<LoadAction> tasks) : base(parentBundle, tasks) { }
+        public BunchAssetWindowsLoadingTask(string url, List<LoadAction> tasks) : base(url, tasks) { }
 
         public override IEnumerator LoadAsync()
         {
-            var bundleReq = AssetBundle.LoadFromFileAsync(Path.Combine(
-                Application.streamingAssetsPath, this.parentBundle
-            ));
+            var bundleReq = AssetBundle.LoadFromFileAsync(this.url);
             yield return bundleReq;
             var parent = bundleReq.assetBundle;
 
@@ -393,7 +398,7 @@ namespace KBBeat.Core
                 yield return request;
                 if (request.asset == null)
                 {
-                    Debug.LogWarning($"Failed to load asset {task.name} from parent {this.parentBundle}!");
+                    Debug.LogWarning($"Failed to load asset {task.name} from parent {this.url}!");
                     task.onLoadFailAction?.Invoke(this);
                     if (this.Failed)
                     {
@@ -410,17 +415,16 @@ namespace KBBeat.Core
 
     internal class BunchAssetAndroidLoadingTask : BunchAssetLoadingTask
     {
-        public BunchAssetAndroidLoadingTask(string parentBundle, List<LoadAction> tasks) : base(parentBundle, tasks) { }
+        public BunchAssetAndroidLoadingTask(string url, List<LoadAction> tasks) : base(url, tasks) { }
 
         public override IEnumerator LoadAsync()
         {
-            var bundleReq = UnityWebRequestAssetBundle.GetAssetBundle(Path.Combine(
-                Application.streamingAssetsPath, this.parentBundle
-            ));
+            var bundleReq = UnityWebRequestAssetBundle.GetAssetBundle(this.url);
             yield return bundleReq.SendWebRequest();
+            
             if (bundleReq.result != UnityWebRequest.Result.Success)
             {
-                throw new Exception($"Parent bundle {parentBundle} not found!");
+                throw new Exception($"Parent bundle {url} not found!");
             }
             var parent = DownloadHandlerAssetBundle.GetContent(bundleReq);
 
@@ -430,7 +434,7 @@ namespace KBBeat.Core
                 yield return request;
                 if (request.asset == null)
                 {
-                    Debug.LogWarning($"Failed to load asset {task.name} from parent {this.parentBundle}!");
+                    Debug.LogWarning($"Failed to load asset {task.name} from parent {this.url}!");
                     task.onLoadFailAction?.Invoke(this);
                     if (this.Failed)
                     {

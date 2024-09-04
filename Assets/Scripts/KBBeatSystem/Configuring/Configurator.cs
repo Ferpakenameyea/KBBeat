@@ -80,6 +80,7 @@ namespace KBBeat.Configuring
     public class Configuration
     {
         [SerializeField] public float customOffsetSeconds = 0f;
+        [SerializeField] public float noteMoveTime = 1f;
         public string ToJson() 
         {
             return JsonUtility.ToJson(this);

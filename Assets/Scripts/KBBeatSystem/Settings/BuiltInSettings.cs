@@ -8,7 +8,17 @@ using KBBeat.Configuring;
 
 internal static class BuiltInSettings
 {
-    private static float moveTime = 2.0f;
+    public static float MoveTime 
+    {
+        get
+        {
+            if (Configurator.Instance == null)
+            {
+                return 2f;
+            }
+            return Configurator.Instance.Config.noteMoveTime;
+        }
+    }
     private static bool gamePaused = false;
     private static float expectedDelay = 2.0f;
     public const int recordingFrames = 10;
@@ -70,18 +80,6 @@ internal static class BuiltInSettings
                     OnGameResume?.Invoke();
                 }
             }
-        }
-    }
-    public static float MoveTime
-    {
-        get
-        {
-            return moveTime;
-        }
-        set
-        {
-            moveTime = value;
-            OnMoveTimeChange?.Invoke(value);
         }
     }
     public static float ExpectedDelayTime

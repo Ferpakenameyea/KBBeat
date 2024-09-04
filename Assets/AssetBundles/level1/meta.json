@@ -1,1 +1,22 @@
-{"assetBundleName":"levels.level1","name":"R.I.P.","description":"G2R2018 RANKING 2","levelAuthors":["MCDaxia"],"composers":["eicateve"],"difficulty":15,"leftTrackSize":2,"rightTrackSize":2,"noteAppearPosition":{"x":0.0,"y":0.0,"z":100.0},"bpm":192.0,"ext":".mp3","length":150.096}
+{
+    "assetBundleName": "levels.level1",
+    "name": "R.I.P.",
+    "description": "G2R2018 RANKING 2",
+    "levelAuthors": [
+        "MCDaxia"
+    ],
+    "composers": [
+        "eicateve"
+    ],
+    "difficulty": 15,
+    "leftTrackSize": 2,
+    "rightTrackSize": 2,
+    "noteAppearPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 100.0
+    },
+    "bpm": 192.0,
+    "ext": ".mp3",
+    "length": 150.096
+}

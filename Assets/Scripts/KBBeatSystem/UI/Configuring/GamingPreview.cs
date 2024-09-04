@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using KBBeat.Audio;
@@ -10,6 +11,7 @@ using Newtonsoft.Json;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
+using XLua.LuaDLL;
 using static KBBeat.Core.InPlayingEnvironment;
 
 internal class GamingPreview : MonoBehaviour
@@ -19,6 +21,14 @@ internal class GamingPreview : MonoBehaviour
     [SerializeField] private TextAsset noteSheet;
     [SerializeField] private Vector3 appear;
     [SerializeField] private Track track;
+
+    private float passed;
+
+    #region SHINE
+    private Queue<PreviewNoteObject> previewNoteObjects = new();
+    [SerializeField] private GameObject shineObject;
+    [SerializeField] private Vector3 shineOffset;
+    #endregion
 
     private ObjectPool<PreviewNoteObject> notePool;
     private AudioPlayer player;
@@ -71,24 +81,53 @@ internal class GamingPreview : MonoBehaviour
             float startTime = Time.time;
             int launched = 0;
             this.player = SoundManager.Instance.PlayClip(this.clip, 1.0f, Channel.Music);
+
             while(launched < this.notes.Count)
             {
-                float passed = Time.time - startTime;
+                passed = Time.time - startTime;
                 if (passed > notes.Peek().StrikeTime - BuiltInSettings.MoveTime + this.Offset)
                 {
                     var note = notes.Dequeue();
-                    this.notePool.Get().GetComponent<PreviewNoteObject>()
-                        .Launch(note, startTime, this.appear, this.track);
+                    var previewObject = this.notePool.Get().GetComponent<PreviewNoteObject>();
+                    previewObject.Launch(note, startTime, this.appear, this.track);
                     launched++;
+                    previewNoteObjects.Enqueue(previewObject);
                     notes.Enqueue(note);
                 }
                 yield return null;
             }
+
             yield return new WaitUntil(() => this.player.Stopped);
             StartCoroutine(PreviewCoroutine());
             yield break;
         }
         StartCoroutine(PreviewCoroutine());
+    }
+
+    private void Update() 
+    {
+        if (!previewNoteObjects.Any())
+        {
+            return;
+        }
+
+        var head = previewNoteObjects.First();
+        Debug.LogFormat("Any, passed={0}, time is={1}", passed, head.StrikeTime + this.Offset);
+        if (head.gameObject.activeInHierarchy == false)
+        {
+            Debug.Log("Dequeue");
+            _ = previewNoteObjects.Dequeue();
+        }
+
+        if (Input.anyKeyDown)
+        {
+            var shine = Instantiate(this.shineObject);
+            shine.transform.SetParent(head.transform);
+            shine.transform.SetLocalPositionAndRotation(
+                this.shineOffset, 
+                Quaternion.identity);
+            shine.transform.SetParent(head.transform.parent);
+        }
     }
 
     private void OnDestroy() 

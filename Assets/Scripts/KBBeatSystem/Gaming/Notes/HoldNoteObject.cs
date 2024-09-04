@@ -23,9 +23,10 @@ namespace KBBeat.Core
         public override NoteType noteType => NoteType.HOLD;
         public InPlayingEnvironment.HoldNote HoldNote { get => base.note as InPlayingEnvironment.HoldNote; }
 
-        private void Start() 
+        private void OnEnable() 
         {
             scale = body.transform.localScale;
+            this.start.transform.localPosition = Vector3.zero;
             this.freezeHead = false;
         }
 
@@ -71,6 +72,9 @@ namespace KBBeat.Core
             float viewEnd = this.HoldNote.StrikeTime + this.HoldNote.Length;
             float actualEnd = viewEnd - BuiltInSettings.holdEndOffset;
             freezeHead = true;
+
+            this.start.transform.position = this.track.transform.position;
+
             float timer = 0f;
 
             while (LevelPlayer.Instance.Time() < actualEnd) 
@@ -120,6 +124,7 @@ namespace KBBeat.Core
 
         public override void Die()
         {
+            this.freezeHead = false;
             LevelPlayer.Instance.HoldNotePool.Release(this);
         }
     }

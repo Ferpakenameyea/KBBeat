@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 480634385
+CRC: 2042434791
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 581ecb69bd580530112be9909e7b8c2d
+    Hash: 55e450a83e39c719b83dec1ae0f5381a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 6f164dc97461d071b7494de54878f911
+    Hash: e4ba19ec1102fae0251ba1a750d82516
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 581ecb69bd580530112be9909e7b8c2d
+    Hash: 55e450a83e39c719b83dec1ae0f5381a
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -40,6 +40,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 81
   Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
 - Class: 83
   Script: {instanceID: 0}
 - Class: 89
@@ -62,6 +64,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: d6fa2d92fc1b3f34da284357edf89c3b, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 06afcd11e79401e4e97dfc8cd34a5f95, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b437b8997f61f344eac30837a46c42d0, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 99af747154959b449a4b342fa913239a, type: 3}
 - Class: 114
@@ -150,6 +154,7 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Scenes/Template.unity
 - Assets/AssetBundles/level0/ingame.unity
 Dependencies:
 - E:/old D/unity/projects/KBbeat/Assets/StreamingAssets/levels.level0
