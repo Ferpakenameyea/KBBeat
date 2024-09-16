@@ -1,0 +1,248 @@
+ManifestFileVersion: 0
+CRC: 836024664
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 82df770d19d8303574db4ddfadf2fc17
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0cf8ce479a1d5cdd2ef81cadd63914bb
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 82df770d19d8303574db4ddfadf2fc17
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 45
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d6fa2d92fc1b3f34da284357edf89c3b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 06afcd11e79401e4e97dfc8cd34a5f95, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 99af747154959b449a4b342fa913239a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fdd4cd0b826c71f478d670c8eb12e141, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8b22792c3b570444eb18cb78c2af3a74, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8e002e4f4773e8e45a86e19a091cc72a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cff9532010471b54e98cb138906109fc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d21dcc2386d650c4597f3633c75a1f98, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 38ce0e51f74b5ed4bb1a2d9c13fcf7a7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 21bf7f712d84d26478ebe6a299f21738, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b09f40b654c21ce4493fdaff91a4d302, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7be02af2d34d4ee4aab64c33058722f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fde0d25a170598d46a0b9dc16b4527a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0004c4bcdd06ca14ca6f3710efb50992, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 201fd0dd7ac57a8468dff966ce3d9614, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 730436e60ce8a4549bf0421a4471f3d9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bced71d657bce7f4eb47fbc41c0cfa98, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 77396b94b6ada314ba4579bb677901cb, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 320
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FaceInfo_Legacy
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FontAssetCreationSettings
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.KerningTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_Character
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontFeatureTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphPairAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphValueRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.VertexGradient
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.AudioClipProperties
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.AudioMixerProperties
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.MarkerList
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.SignalReceiver/EventKeyValue
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.TimelineAsset/EditorSettings
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.TimelineClip
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.ArgumentCache
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentListenerMode
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.FaceInfo
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.Glyph
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphMetrics
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphRect
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+Assets:
+- Assets/AssetBundles/level1/Prefabs/Note.prefab
+- Assets/AssetBundles/level1/WorldTimeline.playable
+- Assets/AssetBundles/level1/Material/glitch sequence/Glitch 3.mat
+- Assets/AssetBundles/level1/Material/Building 1.mat
+- Assets/AssetBundles/level1/Prefabs/Bud_2.prefab
+- Assets/AssetBundles/level1/Prefabs/Bud_4.prefab
+- Assets/AssetBundles/level1/Material/GlitchShader.shader
+- Assets/AssetBundles/level1/Models/bed room.fbx
+- Assets/AssetBundles/level1/Prefabs/WDBuilding.prefab
+- Assets/AssetBundles/level1/Material/Glitch.mat
+- Assets/AssetBundles/level1/Material/light.mat
+- Assets/AssetBundles/level1/Material/glitch sequence/Glitch 2.mat
+- Assets/AssetBundles/level1/Material/glitch sequence/Glitch 4.mat
+- Assets/AssetBundles/level1/Animations/removeFog.signal
+- Assets/AssetBundles/level1/Prefabs/Bud_5.prefab
+- Assets/AssetBundles/level1/Material/PureColor.shader
+- Assets/AssetBundles/level1/Prefabs/trashbin.fbx
+- Assets/AssetBundles/level1/Prefabs/brick corner.fbx
+- Assets/AssetBundles/level1/Material/Building 2.mat
+- Assets/AssetBundles/level1/Material/Sine.shader
+- Assets/AssetBundles/level1/Material/Flower.mat
+- Assets/AssetBundles/level1/Material/Building 3.mat
+- Assets/AssetBundles/level1/Material/Car.mat
+- Assets/AssetBundles/level1/Prefabs/brick line.fbx
+- Assets/AssetBundles/level1/Models/Flower.prefab
+- Assets/AssetBundles/level1/Prefabs/Bud_3.prefab
+- Assets/AssetBundles/level1/Animations/end.signal
+- Assets/AssetBundles/level1/Material/Flower copy.shader
+- Assets/AssetBundles/level1/Material/Note 1.mat
+- Assets/AssetBundles/level1/Animations/init.signal
+- "Assets/AssetBundles/level1/Prefabs/\u8F66.prefab"
+- Assets/AssetBundles/level1/inPlaying.json
+- Assets/AssetBundles/level1/Prefabs/building.fbx
+- Assets/AssetBundles/level1/Prefabs/Track.prefab
+- Assets/AssetBundles/level1/Material/glitch sequence/Glitch 6.mat
+- Assets/AssetBundles/level1/preview.ogg
+- Assets/AssetBundles/level1/Material/Black.mat
+- Assets/AssetBundles/level1/Prefabs/chair.fbx
+- Assets/AssetBundles/level1/Animations/change2.signal
+- Assets/AssetBundles/level1/Material/Building 5.mat
+- Assets/AssetBundles/level1/Prefabs/World.prefab
+- Assets/AssetBundles/level1/mus.ogg
+- Assets/AssetBundles/level1/meta.json
+- Assets/AssetBundles/level1/Material/SinePostEffect.mat
+- Assets/AssetBundles/level1/Material/Glitch 1.mat
+- Assets/AssetBundles/level1/Material/Cube.mat
+- Assets/AssetBundles/level1/Material/Flower.shader
+- Assets/AssetBundles/level1/Material/Flower 1.mat
+- Assets/AssetBundles/level1/Material/Ground.mat
+- Assets/AssetBundles/level1/Models/building.obj
+- Assets/AssetBundles/level1/Material/Trail.mat
+- Assets/AssetBundles/level1/art.png
+- Assets/AssetBundles/level1/CustomSky.mat
+- Assets/AssetBundles/level1/Prefabs/traffic light.prefab
+- "Assets/AssetBundles/level1/Models/\u8DEF\u706F.obj"
+- Assets/AssetBundles/level1/Prefabs/Lamp.prefab
+- Assets/AssetBundles/level1/Prefabs/Bud_1.prefab
+- Assets/AssetBundles/level1/Material/Floor.mat
+- "Assets/AssetBundles/level1/Models/\u5F7C\u5CB8\u82B1.obj"
+- Assets/AssetBundles/level1/Material/Building 4.mat
+- Assets/AssetBundles/level1/Material/glitch sequence/Glitch 5.mat
+Dependencies: []

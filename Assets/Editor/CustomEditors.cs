@@ -82,6 +82,44 @@ public class EditorTools : Editor
 
         Debug.Log("DONE!");
     }
+
+    [MenuItem("Tools/Generatelvl1Standalone_Windows")]
+    public static void GenerateLvl1_Windows() {
+
+        string path = Application.streamingAssetsPath;
+        
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        else
+        {
+            var dir = new DirectoryInfo(path);    
+            foreach (var file in dir.GetFiles())
+            {
+                Debug.LogFormat("Deleting item: {0}", file);
+                file.Delete();
+            }
+        }
+
+        var names = AssetDatabase.GetAllAssetBundleNames().Where(name => !name.Contains("level0"));
+
+        List<AssetBundleBuild> builds = new();
+
+        foreach (var bundlename in names)
+        {
+            Debug.LogFormat("Building: {0}", bundlename);
+            builds.Add(new()
+            {
+                assetBundleName = bundlename,
+                assetNames = AssetDatabase.GetAssetPathsFromAssetBundle(bundlename)
+            });
+        }
+
+        BuildPipeline.BuildAssetBundles(path, builds.ToArray(), BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
+
+        Debug.Log("DONE!");
+    }
 }
 
 [CustomEditor(typeof(LevelSelector))]
