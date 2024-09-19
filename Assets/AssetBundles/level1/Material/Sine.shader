@@ -1,4 +1,4 @@
-Shader "KBBeat PostEffects/levels/level1/glitch"
+Shader "KBBeat PostEffects/levels/level1/sine"
 {
     Properties
     {
@@ -8,6 +8,7 @@ Shader "KBBeat PostEffects/levels/level1/glitch"
         _A ("A", Float) = 1
         _Omega ("Omega", Float) = 1
         _T ("T", Float) = 0
+        _TimeFactor ("TimeFactor", Float) = 0
     }
     SubShader
     {
@@ -25,6 +26,7 @@ Shader "KBBeat PostEffects/levels/level1/glitch"
             float _A;
             float _Omega;
             float _T;
+            float _TimeFactor;
             sampler2D _MainTex;
             fixed4 _MulColor;
 
@@ -41,7 +43,7 @@ Shader "KBBeat PostEffects/levels/level1/glitch"
             };
 
             float CalSine(float x) {
-                return _A * sin(_Omega * x + _T);
+                return _A * sin(_Omega * (x + _Time.y * _TimeFactor) + _T);
             }
 
             v2f vert (appdata v)
