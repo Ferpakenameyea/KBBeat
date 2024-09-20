@@ -5,6 +5,7 @@ using UnityEngine;
 public class AfterEffect : MonoBehaviour 
 {
     [SerializeField] private Material material;
+    public Material Material { get => material; set => material = value; }
 
     private void OnRenderImage(RenderTexture src, RenderTexture dest) 
     {

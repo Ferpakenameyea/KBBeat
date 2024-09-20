@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SinePostEffect
-  m_Shader: {fileID: 4800000, guid: 01c766788ac9d3045ae46df3441b4f48, type: 3}
+  m_Name: circles
+  m_Shader: {fileID: 4800000, guid: 85a3157bb43cc7b419aa418bd0547265, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -61,25 +61,26 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _A: 0.001
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Frequency: 0.001
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
+    - _MulFactor: 1
     - _OcclusionStrength: 1
-    - _Omega: 100
     - _Parallax: 0.02
+    - _SineGrowRate: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _T: -2.8
-    - _TimeFactor: 1
+    - _Threshold: 1
     - _UVSec: 0
+    - _Width: 17.9
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
