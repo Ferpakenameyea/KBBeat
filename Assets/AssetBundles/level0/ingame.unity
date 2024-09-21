@@ -56942,7 +56942,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 255
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -62717,7 +62717,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2017962441}
-  - component: {fileID: 2017962443}
   - component: {fileID: 2017962442}
   m_Layer: 0
   m_Name: GameUI
@@ -62764,27 +62763,6 @@ MonoBehaviour:
   earlyAnimator: {fileID: 755721431}
   forceAnimator: {fileID: 1749346504}
   forceTextMeshPro: {fileID: 1749346502}
---- !u!95 &2017962443
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017962440}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5b84e95364099b94a91a5f333657abbb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2025257336
 GameObject:
   m_ObjectHideFlags: 0
@@ -65498,13 +65476,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c4a1a30cadc4040ab70d5272ccdcfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPlayerPrefab: {fileID: 4899929530513936318, guid: 06d2ae283ad6a71428997b8dd9b6eb22, type: 3}
   musicVolume: 1
   effectVolume: 1
   soundTable:
   - {fileID: 8300000, guid: afb1352c135c15448828aab044a55760, type: 3}
   - {fileID: 8300000, guid: b3f76a2f799ddff46be24d9633eddd37, type: 3}
   - {fileID: 8300000, guid: 518c0f3a61add5a4cbf2316e05ab02de, type: 3}
-  playerPoolPrefab: {fileID: 8127670782725581917, guid: 36a5f96186a4f2149be969e2f7fc6aec, type: 3}
 --- !u!1 &2123131596
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using KBbeat;
+﻿using KBBeat;
+using KBBeat.Core;
 using UnityEngine;
 
 
