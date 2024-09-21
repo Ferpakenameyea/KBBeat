@@ -1,0 +1,19 @@
+local util = require 'xlua.util'
+
+local gameobject = this.gameObject
+
+this.transform:SetParent(nil)
+
+CS.UnityEngine.Object.DontDestroyOnLoad(gameobject)
+
+local cs_coroutine_runner = gameobject:AddComponent(typeof(CS.KBBeat.Modding.Lua.CoroutineAgent))
+
+return {
+    start = function(...)
+	    return cs_coroutine_runner:StartCoroutine(util.cs_generator(...))
+	end;
+
+	stop = function(coroutine)
+	    cs_coroutine_runner:StopCoroutine(coroutine)
+	end
+}
