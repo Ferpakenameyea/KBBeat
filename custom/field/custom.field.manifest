@@ -1,0 +1,55 @@
+ManifestFileVersion: 0
+CRC: 1819769825
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: afa1ae886facb372c20f79e2309a4460
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f552445420114bb194f34486e40d7717
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: afa1ae886facb372c20f79e2309a4460
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: d6fa2d92fc1b3f34da284357edf89c3b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8b22792c3b570444eb18cb78c2af3a74, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.AudioClipProperties
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.AudioMixerProperties
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.MarkerList
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.TimelineAsset/EditorSettings
+- AssemblyName: Unity.Timeline
+  ClassName: UnityEngine.Timeline.TimelineClip
+Assets:
+- Assets/KBBeatLevel/mus.ogg
+- Assets/KBBeatLevel/preview.ogg
+- Assets/KBBeatLevel/DirectorTimeline.playable
+- Assets/KBBeatLevel/LuaScripts/LuaComponent.lua.txt
+- Assets/KBBeatLevel/meta.json
+- Assets/KBBeatLevel/inPlaying.json
+- Assets/KBBeatLevel/events/end.signal
+- Assets/KBBeatLevel/art.png
+Dependencies: []
