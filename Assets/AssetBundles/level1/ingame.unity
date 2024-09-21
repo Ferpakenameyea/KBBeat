@@ -5935,6 +5935,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d867a2106a2aae45b5c15916332dcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shader_BrightnessRange: {fileID: 4800000, guid: da1495e0c0711e84d9a8474dcd0530f5, type: 3}
+  shader_Blur: {fileID: 4800000, guid: 52f95b52ef58c774caebd05cc16bcb6d, type: 3}
+  shader_Add: {fileID: 4800000, guid: 308b8952d4f3eb7449979ebaf93fed04, type: 3}
   GlowColor: {r: 1, g: 1, b: 1, a: 1}
   BrightnessRange: 10
   BlurRadius: 0

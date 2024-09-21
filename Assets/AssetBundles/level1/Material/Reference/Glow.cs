@@ -5,15 +5,15 @@ using UnityEngine;
 public class Glow : MonoBehaviour
 {
     //特效Shader变量
-    private Shader shader_BrightnessRange;
+    [SerializeField] private Shader shader_BrightnessRange;
     //特效材质球变量
     private Material material_BrightnessRange;
     //特效Shader变量
-    private Shader shader_Blur;
+    [SerializeField] private Shader shader_Blur;
     //特效材质球变量
     private Material material_Blur;
     //特效Shader变量
-    private Shader shader_Add;
+    [SerializeField] private Shader shader_Add;
     //特效材质球变量
     private Material material_Add;
     
@@ -40,19 +40,8 @@ public class Glow : MonoBehaviour
     //程序启动处理部分
     private void Start() 
     {
-        //依据材质球路径和名称获取shader
-        shader_BrightnessRange = Shader.Find("lvl1 assets/CRLuo/CRLuo_CFX_BrightnessRange");
-        //依据Shader创建材质球
         material_BrightnessRange = new Material(shader_BrightnessRange);
-
-        //依据材质球路径和名称获取shader
-        shader_Blur = Shader.Find("lvl1 assets/CRLuo/CRLuo_CFX_Blur");
-        //依据Shader创建材质球
         material_Blur = new Material(shader_Blur);
-
-        //依据材质球路径和名称获取shader
-        shader_Add = Shader.Find("lvl1 assets/CRLuo/CRLuo_CFX_BlendAdd");
-        //依据Shader创建材质球
         material_Add = new Material(shader_Add);
     }
 
