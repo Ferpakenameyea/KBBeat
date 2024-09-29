@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 4022720315
+CRC: 4083451257
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3dce960a832ee8a4d7f477bbe432b0d6
+    Hash: c8106f15b743ed21e7e7f95f462aeb05
   TypeTreeHash:
     serializedVersion: 2
     Hash: dd8461a215bfc442b63c8758879ed0a3
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 3dce960a832ee8a4d7f477bbe432b0d6
+    Hash: c8106f15b743ed21e7e7f95f462aeb05
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -159,3 +159,4 @@ Assets:
 - Assets/AssetBundles/level0/ingame.unity
 Dependencies:
 - E:/old D/unity/projects/KBbeat/Assets/StreamingAssets/levels.level0
+- E:/old D/unity/projects/KBbeat/Assets/StreamingAssets/levels.level1

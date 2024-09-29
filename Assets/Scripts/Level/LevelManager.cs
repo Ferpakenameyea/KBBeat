@@ -76,9 +76,19 @@ public class LevelManager : MonoBehaviour
 
         List<BunchAssetLoadingTask.LoadAction> tasks = new() {
             new("inPlaying.json", (res) =>
-                inPlaying = JsonConvert.DeserializeObject<InPlayingEnvironment>(
-                    encoding.GetString((res as TextAsset).bytes),
-                    newtonsoftJsonSettings),
+                { 
+                    inPlaying = JsonConvert.DeserializeObject<InPlayingEnvironment>(
+                        encoding.GetString((res as TextAsset).bytes),
+                        newtonsoftJsonSettings);
+                    if (LevelOverrider.Enabled) 
+                    {
+                        var overrider = LevelOverrider.Instance.GetOverrider();
+                        if (overrider != null) 
+                        {
+                            inPlaying = overrider;
+                        }
+                    }
+                },
 
                 (task) => task.ReportFatalFailure("inPlaying.json not found!")),
 

@@ -5,10 +5,10 @@ using UnityEngine;
 
 public static class BuiltInSettings
 {
-    private static float moveTime = 2.0f;
+    private static float moveTime = 1.3f;
     private static bool gamePaused = false;
     private static float expectedDelay = 2.0f;
-    public const int recordingFrames = 10;
+    public const int recordingFrames = 5;
     public const float missLine = 0.080f;
     public const float goodLine = 0.050f;
     public const float tooEarlyLine = 0.080f;

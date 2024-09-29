@@ -20,7 +20,7 @@ public class HoldNoteObject : NoteObject
     public override NoteType noteType => NoteType.HOLD;
     public InPlayingEnvironment.HoldNote HoldNote { get => base.note as InPlayingEnvironment.HoldNote; }
 
-    private void Start() 
+    private void OnEnable() 
     {
         scale = body.transform.localScale;
         this.freezeHead = false;
