@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2768385863
+CRC: 2652437508
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 509da26641f1f67dc00cddb6539869ed
+    Hash: 0d874d788a72cb1a0a92157e5f8d7b76
   TypeTreeHash:
     serializedVersion: 2
     Hash: b80bd725b65b1719feb0aa18c0c6efcc
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 509da26641f1f67dc00cddb6539869ed
+    Hash: 0d874d788a72cb1a0a92157e5f8d7b76
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -180,29 +180,30 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
-- Assets/AssetBundles/level1/Material/floorbgl1.mat
 - Assets/AssetBundles/level1/Prefabs/Note.prefab
 - Assets/AssetBundles/level1/Material/l_trail.mat
 - Assets/AssetBundles/level1/WorldTimeline.playable
 - Assets/AssetBundles/level1/Material/death particle trail.mat
 - Assets/AssetBundles/level1/Material/glitch sequence/Glitch 3.mat
+- Assets/AssetBundles/level1/Material/glitch sequence/Glitch 5.mat
 - Assets/AssetBundles/level1/Material/Building 1.mat
 - Assets/AssetBundles/level1/Material/Glitch F.mat
-- Assets/AssetBundles/level1/Material/GlitchShader.shader
 - Assets/AssetBundles/level1/Material/Reference/BrightnessRange.shader
+- Assets/AssetBundles/level1/Material/GlitchShader.shader
 - Assets/AssetBundles/level1/Material/circles.mat
 - Assets/AssetBundles/level1/Material/Rainbow.mat
 - Assets/AssetBundles/level1/Material/glitch sequence/Glitch 7.mat
-- Assets/AssetBundles/level1/Material/Glitch.mat
 - Assets/AssetBundles/level1/Material/ground 1.mat
+- Assets/AssetBundles/level1/Material/reverse circles.shader
 - Assets/AssetBundles/level1/Material/light.mat
 - Assets/AssetBundles/level1/Material/glitch sequence/Glitch 2.mat
 - Assets/AssetBundles/level1/Material/glitch sequence/Glitch 4.mat
+- Assets/AssetBundles/level1/Material/RemindFloor.mat
 - Assets/AssetBundles/level1/Animations/removeFog.signal
 - Assets/AssetBundles/level1/Material/PureColor.shader
-- Assets/AssetBundles/level1/Material/RemindFloor.mat
+- Assets/AssetBundles/level1/Material/Glitch.mat
 - Assets/AssetBundles/level1/Material/Building 2.mat
-- Assets/AssetBundles/level1/Material/reverse circles.shader
+- Assets/AssetBundles/level1/Material/LiberationSans SDF - Fallback.asset
 - Assets/AssetBundles/level1/Material/Sine.shader
 - Assets/AssetBundles/level1/Material/Flower.mat
 - Assets/AssetBundles/level1/Material/Building 3.mat
@@ -213,9 +214,9 @@ Assets:
 - Assets/AssetBundles/level1/Animations/end.signal
 - Assets/AssetBundles/level1/Material/Flower copy.shader
 - Assets/AssetBundles/level1/Material/LightGray.mat
+- Assets/AssetBundles/level1/Material/Note 1.mat
 - Assets/AssetBundles/level1/Animations/init.signal
 - Assets/AssetBundles/level1/inPlaying.json
-- Assets/AssetBundles/level1/Material/Note 1.mat
 - Assets/AssetBundles/level1/Prefabs/Track.prefab
 - Assets/AssetBundles/level1/Material/glitch sequence/Glitch 6.mat
 - Assets/AssetBundles/level1/Material/Cross.mat
@@ -228,25 +229,27 @@ Assets:
 - Assets/AssetBundles/level1/mus.ogg
 - Assets/AssetBundles/level1/meta.json
 - Assets/AssetBundles/level1/Material/Reference/Blur.shader
-- Assets/AssetBundles/level1/Material/CrossPure.mat
-- Assets/AssetBundles/level1/Material/Glitch 1.mat
-- Assets/AssetBundles/level1/Material/Cube.mat
-- Assets/AssetBundles/level1/Material/Flower.shader
-- Assets/AssetBundles/level1/Material/glitch sequence/Glitch 9.mat
-- Assets/AssetBundles/level1/Material/glitch sequence/GlitchSeq 1.mat
-- Assets/AssetBundles/level1/Material/Rainbow.shader
-- Assets/AssetBundles/level1/Material/Flower 1.mat
 - Assets/AssetBundles/level1/Material/SinePostEffect.mat
+- Assets/AssetBundles/level1/Material/CrossPure.mat
+- Assets/AssetBundles/level1/Material/Cube.mat
+- Assets/AssetBundles/level1/Material/LiberationSans SDF - Fallback.mat
+- Assets/AssetBundles/level1/Material/Glitch 1.mat
+- Assets/AssetBundles/level1/Material/glitch sequence/Glitch 9.mat
+- Assets/AssetBundles/level1/Material/Rainbow.shader
+- Assets/AssetBundles/level1/Material/glitch sequence/GlitchSeq 1.mat
+- Assets/AssetBundles/level1/Material/Flower 1.mat
 - Assets/AssetBundles/level1/Material/ReverseCircle.mat
-- Assets/AssetBundles/level1/Material/Ground.mat
+- Assets/AssetBundles/level1/Material/Flower.shader
 - Assets/AssetBundles/level1/Material/Reference/Add.shader
 - Assets/AssetBundles/level1/Material/Trail.mat
 - Assets/AssetBundles/level1/art.png
+- Assets/AssetBundles/level1/Material/LiberationSans SDF - Fallback 1.mat
 - Assets/AssetBundles/level1/CustomSky.mat
+- Assets/AssetBundles/level1/Material/Ground.mat
 - Assets/AssetBundles/level1/Material/SineBad.mat
 - Assets/AssetBundles/level1/Material/Floor.mat
 - Assets/AssetBundles/level1/Material/explode blocks.mat
 - Assets/AssetBundles/level1/Material/l_trail center.mat
-- Assets/AssetBundles/level1/Material/glitch sequence/Glitch 5.mat
 - Assets/AssetBundles/level1/Material/Building 4.mat
+- Assets/AssetBundles/level1/Material/floorbgl1.mat
 Dependencies: []

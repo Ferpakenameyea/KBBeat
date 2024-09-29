@@ -24,6 +24,7 @@ public class LightningController : MonoBehaviour
         if (syncAmbientLight) {
             RenderSettings.ambientLight = ambientLightColor;
             RenderSettings.ambientIntensity = ambientLightIntensity;
+            Debug.Log(RenderSettings.ambientIntensity);
         }
     }
 }

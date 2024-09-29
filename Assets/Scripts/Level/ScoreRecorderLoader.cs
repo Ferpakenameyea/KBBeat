@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -26,8 +27,11 @@ public static class ScoreRecorder
         if (!file.Exists)
         {
             Debug.LogWarningFormat("player file {0} not found, creating new", BuiltInSettings.PlayerFilePath);
-            file.Create().Close();
             scoreMap = new();
+            using (var stream = file.Create()) 
+            {
+                stream.Write(Encoding.UTF8.GetBytes(DictionarySerializer<string, LevelHighScoreRecord>.ToJson(scoreMap)));
+            }
             return;
         }
         var reader = new StreamReader(file.OpenRead());

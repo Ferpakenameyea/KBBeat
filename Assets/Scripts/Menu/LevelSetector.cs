@@ -30,6 +30,10 @@ namespace KBbeat
         public string SelectedLevelName { get => this.levels[SelectedLevelIndex].Meta.AssetBundleName.Split('.')[1]; }
         public bool Ready { get; private set; } = false;
 
+        private void OnEnable() {
+            Canvas.ForceUpdateCanvases();
+        }
+
         private void Start()
         {
             this.OnLoadComplete += () =>

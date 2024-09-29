@@ -64,7 +64,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DistanceLimit: 440.2
+    - _DistanceLimit: 671.14294
     - _DstBlend: 0
     - _Frequency: 2
     - _GlossMapScale: 1
@@ -78,7 +78,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Theta: -1.9153634
+    - _Theta: 0.4687638
     - _Threshold: 0
     - _UVSec: 0
     - _ZWrite: 1

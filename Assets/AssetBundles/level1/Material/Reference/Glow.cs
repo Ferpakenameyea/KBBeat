@@ -30,9 +30,9 @@ public class Glow : MonoBehaviour
     [Range(0f, 10f)]
     public float BrightnessRange = 1f;
 
-    [Range(0f, 1f)]
+    [Range(0f, 3f)]
     public float BlurRadius = 1f;
-    [Range(1, 100)]
+    [Range(1, 200)]
     public int LowPixel =1;
     [Range(0f, 10f)]
     public int BlurConvolution = 3;
